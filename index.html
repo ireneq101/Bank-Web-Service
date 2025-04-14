@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Bank Web Service</title>
+  </head>
+  <body>
+    <section>
+      <header class="content">
+        <nav>
+          <div class="welcome-message">
+            <!-- <div> -->
+              <h1 class="login-message">Login to get started</h1>
+              <p class="logout-timer">
+                You will be logged out in <span class="timer">05:00</span>
+              </p>
+            <!-- </div> -->
+            <!-- <h1 class="logout-message">We miss you!</h1> -->
+          </div>
+
+          <div class="accounts-login">
+            <p class="account-label">Login your account</p>
+            <button class="login-btn">&rarr;</button>
+          </div>
+
+          <div class="login-account">
+            <p>Login Your Account</p>
+            <form class="form login-acc-form">
+              <input
+                type="text"
+                name="User"
+                class="login-form login-input-name"
+              />
+              <input
+                type="number"
+                name="Pin"
+                class="login-form login-input-pin"
+              />
+              <button class="form__btn form__btn__login">&rarr;</button>
+              <label class="form__label">Name</label>
+              <label class="form__label">Pin</label>
+            </form>
+          </div>
+
+          <div class="accounts-btn">
+            <p class="switch-label">Switch account</p>
+            <button class="switch-btn">&rarr;</button>
+          </div>
+
+          <div class="switch-account">
+            <p>Switch Account</p>
+            <form class="form switch-acc-form">
+              <input
+                type="text"
+                name="switch-user"
+                class="switch-form switch-input-name"
+              />
+              <input
+                type="number"
+                name="switch-pin"
+                class="switch-form switch-input-pin"
+              />
+              <button class="form__btn form__btn__switch">&rarr;</button>
+              <label class="form__label">Name</label>
+              <label class="form__label">Pin</label>
+            </form>
+          </div>
+        </nav>
+      </header>
+
+      <main class="content hidden">
+        <!-- BALANCE -->
+        <div class="balance">
+          <div class="balance-label">
+            <p class="balance-text">Your Balance</p>
+            <p class="balance-date">
+              As of <span class="date">13|02|2025</span>
+            </p>
+          </div>
+
+          <div class="balance-value-container">
+            <h1 class="balance-value">#00</h1>
+          </div>
+        </div>
+
+        <!-- TRANSACTIONS -->
+        <div class="transaction-container">
+          <div class="transaction-heading">
+            <p class="transaction-label">Latest Transactions</p>
+            <p class="transaction-sort">Sort &downarrow;</p>
+          </div>
+
+          <div class="transactions">
+            <!-- DEPOSITS -->
+            <div class="transactions-row">
+              <div class="transaction-type transaction-type-deposit">
+                2 deposits
+              </div>
+              <div class="transaction-date">5 days ago</div>
+              <div class="transaction-value">#2,000</div>
+            </div>
+
+            <!-- WITHDRAWALS -->
+            <div class="transactions-row">
+              <div class="transaction-type transaction-type-withdrawal">
+                1 withdrawal
+              </div>
+              <div class="transaction-date">14|02|2025</div>
+              <div class="transaction-value">#-400</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUMMARY -->
+        <div class="summary">
+          <div class="summary-income">
+            <p class="summary-income-label">Income</p>
+            <p class="summary-income-value">#0000</p>
+          </div>
+
+          <div class="summary-outcome">
+            <p class="summary-outcome-label">Outcome</p>
+            <p class="summary-outcome-value">#0000</p>
+          </div>
+
+          <div class="summary-interest">
+            <p class="summary-interest-label">Interest</p>
+            <p class="summary-interest-value">#0000</p>
+          </div>
+        </div>
+      </main>
+
+      <!-- OVERLAYS -->
+      <!-- ACCOUNT PROFILE -->
+      <div class="profile-container profile-info">
+        <div class="profile">
+          <p class="profile-label">Profile</p>
+          <form action="" class="form-profile" id="">
+            <p>Fullname: <span class="profile-name">Irene Omoregbee</span></p>
+            <p>Pin: <span class="profile-pin">1111</span></p>
+            <p>Email: <span class="profile-email">irene@gmail.com</span></p>
+          </form>
+        </div>
+      </div>
+
+      <!-- TRANSFER MONEY -->
+      <div class="transfer-container">
+        <p>Transfer Money</p>
+        <form class="form transfer-form">
+          <input
+            type="text"
+            name="transfer-to"
+            class="trans-form transfer-input-to"
+          />
+          <input
+            type="number"
+            name="transfer-amount"
+            class="trans-form transfer-input-amount"
+          />
+          <button class="form__btn form__btn--transfer">&rarr;</button>
+          <label class="form__label">Transfer to</label>
+          <label class="form__label">Amount</label>
+        </form>
+        <!-- <p>Transfer successful</p>
+        <p>Transfer error</p> -->
+      </div>
+
+      <!-- REQUEST ACCOUNT -->
+      <div class="loan-container">
+        <p>Request Loan</p>
+        <form class="form loan-form">
+          <input
+            type="number"
+            name="loan-amount"
+            class="request-form request-input-amount"
+          />
+          <button class="form__btn form__btn--loan">&rarr;</button>
+          <label class="form__label">Amount</label>
+        </form>
+        <!-- <p>Request successful</p>
+        <p>Request error</p> -->
+      </div>
+
+      <!-- CLOSE ACCOUNT -->
+      <div class="close-account">
+        <p>Close Account</p>
+        <form class="form form-close-acc">
+          <input
+            type="text"
+            name="close-user"
+            class="close-form close-input-name"
+          />
+          <input
+            type="password"
+            name="close-pin"
+            class="close-form close-input-pin"
+          />
+          <button class="form__btn form__btn--transfer">&rarr;</button>
+          <label class="form__label">Confirm user</label>
+          <label class="form__label">Confirm pin</label>
+        </form>
+        <!-- <p>User error</p> -->
+      </div>
+
+      <!-- OVERLAY -->
+      <div class="overlay profile-info"></div>
+    </section>
+
+    <!-- HAMBURGER SLIDE -->
+    <div class="hamburger-menu">
+      <div class="hamburger-image">
+        <img src="menu-line.png" alt="" />
+      </div>
+
+      <div class="humburger-menu-list">
+        <ul>
+          <li class="profile-list">Profile</li>
+          <li class="transfer-list">Transfer money</li>
+          <li class="request-list">Request loan</li>
+          <li class="close-list">Close account</li>
+          <li class="logout-list">Logout</li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

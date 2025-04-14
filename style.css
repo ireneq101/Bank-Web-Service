@@ -1,0 +1,522 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  background-color: rgb(237, 247, 251);
+  /* display: grid; */
+  /* grid-template-columns: 82% 18%; */
+  height: 100vh;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hidden,
+.hamburger-menu {
+  display: none;
+  opacity: 0%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 4%;
+  /* background-color: yellow; */
+}
+
+nav > .welcome-message {
+  width: 50%;
+  /* background-color: blue; */
+  /* padding: 3% 0; */
+}
+
+nav > .welcome-message h1 {
+  font-size: 2rem;
+  font-style: normal;
+}
+
+nav > .welcome-message > .login-message, .logout-timer {
+  display: block;
+  /* position: absolute; */
+}
+
+nav > .welcome-message > .logout-timer {
+  display: none;
+  font-size: 1.2rem;
+  padding-top: 1%;
+}
+
+nav > .welcome-message > .logout-message {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+nav .accounts-login{
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  /* align-items: end; */
+  /* background-color: red; */
+}
+
+nav .account-label,
+.switch-label {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0.3% 0 0 0;
+  padding-right: 2%;
+}
+
+nav .login-btn,
+.switch-btn {
+  width: 9%;
+  /* height: 48%; */
+  align-items: center;
+  text-align: center;
+  /* margin: 0.5% 0; */
+  font-size: 1rem;
+  /* font-weight: 900; */
+  text-align: center;
+  background-color: rgb(3, 163, 216);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+nav .switch-btn {
+  width: 10%;
+  height: 50%;
+}
+
+nav .login-btn:hover,
+.switch-btn:hover {
+  background-color: rgb(0, 144, 193);
+}
+
+nav > .accounts-btn {
+  width: 50%;
+  display: none;
+  justify-content: end;
+}
+
+/* nav > .accounts-btn > .switch-label {
+  font-size: 1.3rem;
+  text-align: center;
+  padding-right: 2%;
+} */
+
+/* nav > .accounts-btn > .switch-btn {
+  width: 9%;
+  height: 48%;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+  text-align: center;
+  background-color: rgb(3, 163, 216);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+} */
+
+/* nav > .accounts-btn > .switch-btn:hover {
+  background-color: rgb(0, 144, 193);
+} */
+
+main > .balance {
+  background-color: white;
+  border-radius: 40px;
+  width: 100%;
+  padding: 3% 0;
+  margin: 2% 0 0 0;
+}
+
+main > .balance > .balance-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4%;
+}
+
+main > .balance > .balance-label > .balance-text {
+  font-size: 1.7rem;
+  padding-bottom: 0.9%;
+}
+
+main > .balance > .balance-label > .balance-date {
+  font-size: 1rem;
+  margin-top: 0.5%;
+  color: rgb(114, 113, 113);
+}
+
+main > .balance > .balance-value-container {
+  background-color: rgb(3, 163, 216);
+  margin: 0 2%;
+  padding: 2.5%;
+  border-radius: 30px;
+}
+
+main > .balance > .balance-value-container > .balance-value {
+  color: white;
+  font-size: 3rem;
+}
+
+main > .transaction-container {
+  width: 100%;
+  margin-top: 4%;
+}
+
+main > .transaction-container > .transaction-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4%;
+  margin-bottom: 1%;
+}
+
+main > .transaction-container > .transaction-heading > .transaction-label {
+  font-size: 1.7rem;
+}
+
+main > .transaction-container > .transaction-heading > .transaction-sort {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+main > .transaction-container > .transactions {
+  background-color: white;
+  overflow: scroll;
+  width: 100%;
+  height: 50vh;
+}
+
+main > .transaction-container > .transactions > .transactions-row {
+  /* grid-row: 2 / span 2; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2% 3.3%;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s ease-in-out;
+}
+
+main > .transaction-container > .transactions > .transactions-row:hover {
+  background-color: whitesmoke;
+}
+
+main
+  > .transaction-container
+  > .transactions
+  > .transactions-row
+  > .transaction-date {
+  text-align: center;
+}
+
+main
+  > .transaction-container
+  > .transactions
+  > .transactions-row
+  > .transaction-value {
+  text-align: end;
+}
+
+main
+  > .transaction-container
+  > .transactions
+  > .transactions-row
+  > .transaction-type-deposit {
+  background-color: rgb(117, 191, 5);
+  color: white;
+  width: 30%;
+  border-radius: 10px;
+  text-align: center;
+  padding: 0.5% 0;
+}
+
+main
+  > .transaction-container
+  > .transactions
+  > .transactions-row
+  > .transaction-type-withdrawal {
+  background-color: rgba(250, 42, 42, 0.977);
+  color: white;
+  width: 36%;
+  border-radius: 10px;
+  text-align: center;
+  padding: 0.5% 0;
+}
+
+main > .summary {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 15%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4%;
+  margin: 4% 0 2% 0;
+}
+
+main > .summary > .summary-income {
+  background: linear-gradient(
+    to left top,
+    rgb(117, 191, 5),
+    rgb(120, 170, 44),
+    rgb(180, 224, 114)
+  );
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 10% 0;
+  border-radius: 10px;
+}
+
+main > .summary > .summary-income > .summary-income-label {
+  font-size: 2rem;
+  font-weight: 700;
+  padding-bottom: 8%;
+}
+
+main > .summary > .summary-income > .summary-income-value,
+.summary-outcome-value,
+.summary-interest-value {
+  font-size: 1.5rem;
+}
+
+main > .summary > .summary-outcome {
+  background: linear-gradient(
+    to left top,
+    red,
+    rgb(237, 65, 65),
+    rgb(243, 126, 126)
+  );
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 10% 0;
+  border-radius: 10px;
+}
+
+main > .summary > .summary-outcome > .summary-outcome-label {
+  font-size: 2rem;
+  font-weight: 700;
+  padding-bottom: 8%;
+}
+
+main > .summary > .summary-interest {
+  background: linear-gradient(
+    to left top,
+    rgb(117, 191, 5),
+    rgb(120, 170, 44),
+    rgb(180, 224, 114)
+  );
+  color: white;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 10% 0;
+  border-radius: 10px;
+}
+
+main > .summary > .summary-interest > .summary-interest-label {
+  font-size: 2rem;
+  font-weight: 700;
+  padding-bottom: 8%;
+}
+
+/* HAMBURGER */
+.hamburger-menu {
+  background-color: rgb(3, 163, 216);
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.hamburger-menu > .hamburger-image {
+  width: 15%;
+  height: 0vh;
+  margin-top: 10%;
+  margin-left: 10%;
+}
+
+.hamburger-menu > .hamburger-image img {
+  width: 100%;
+  border: 1px solid white;
+}
+
+.hamburger-menu > .humburger-menu-list {
+  width: 100%;
+  align-items: center;
+  margin-top: 35%;
+}
+
+.hamburger-menu > .humburger-menu-list > ul {
+  text-align: start;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.hamburger-menu > .humburger-menu-list > ul > li,
+a {
+  color: white;
+  list-style: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 10%;
+  padding: 5% 0;
+  padding-left: 5%;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.hamburger-menu > .humburger-menu-list > ul > li:hover {
+  background-color: rgb(0, 144, 193);
+  /* background-color: #007bff; */
+}
+
+/* OVERLAYS */
+/* Hide all overlay forms by default */
+.profile-container,
+.login-account,
+.switch-account,
+.close-account,
+.transfer-container,
+.loan-container {
+  z-index: 100;
+  inset: 28% 30%;
+  width: 35%;
+  position: absolute;
+  box-shadow: 0 4rem 10rem rgba(0, 0, 0, 0.7);
+  background-color: white;
+  border-radius: 20px;
+  padding: 2% 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: none;
+}
+
+/* .profile-container, */
+.login-account,
+.switch-account,
+.close-account,
+.transfer-container,
+.loan-container p {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 3% 0;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  row-gap: 10px;
+  padding-left: 12%;
+  margin-top: 7%;
+}
+
+.login-form,
+.switch-form,
+.trans-form,
+.request-form,
+.close-form {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  transition: border-color 0.3s ease-in-out;
+}
+
+/* Add focus effect */
+.form-input:focus {
+  border-color: rgb(0, 144, 193);
+  outline: none;
+}
+
+/* Labels */
+.form__label {
+  font-size: 1rem;
+  text-align: start;
+  color: rgb(114, 113, 113);
+  margin-top: 2%;
+}
+
+.form__btn {
+  background-color: rgb(3, 163, 216);
+  color: white;
+  padding: 1%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  width: 50%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.form__btn:hover {
+  background-color: rgb(0, 144, 193);
+}
+
+.profile-info {
+  display: none;
+}
+
+.profile-container > .profile > .profile-label {
+  text-align: center;
+  font-size: 3rem;
+  padding: 3% 0 5% 0;
+}
+
+.profile-container > .profile > .form-profile {
+  padding-left: 10%;
+}
+
+.profile-container > .profile > .form-profile p {
+  font-size: 1.5rem;
+  margin-top: 2%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+  opacity: 100%;
+  transition: opacity 1s ease-out;
+}
+
+.loan-container p {
+  padding: 2%;
+}
+
+.loan-container > .loan-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  row-gap: 10px;
+  padding-left: 20%;
+}
